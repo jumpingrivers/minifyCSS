@@ -1,37 +1,40 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-minifyCSS
-=========
 
-A binding to the [csso](https://github.com/css/csso) JavaScript library.
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
 
-Installation
-------------
+# The minifyCSS package
+
+A binding to the [csso](https://github.com/css/csso) JavaScript library. 
+
+## Installation
 
 The package can be installed via
-
-``` r
+```{r eval=FALSE}
 devtools::install_github("jumpingrivers/minifyCSS")
 ```
 
-Usage
------
+## Usage
 
-``` r
+```{r}
 library("minifyCSS")
 ```
-
 The main function takes a CSS string input
-
-``` r
+```{r}
 input = "* { color: green; }
 ul, ol, li { color: blue; }
 UL.foo, span.bar { color: red; }"
 ```
-
 and returns a minified version
-
-``` r
+```{r}
 minifyCSS(input)
-#> [1] "*{color:green}li,ol,ul{color:#00f}UL.foo,span.bar{color:red}"
 ```
